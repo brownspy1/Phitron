@@ -5,6 +5,5 @@
 int main(){
     char k;
     scanf("%s",&k);
-    fgetc(k,100,stdin);
     return 0;
 }
