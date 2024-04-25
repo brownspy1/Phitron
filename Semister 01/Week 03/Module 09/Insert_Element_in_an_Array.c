@@ -1,6 +1,4 @@
-//
 // Created by mahadi on 4/22/2024.
-//
 #include <stdio.h>
 int main(){
     int n;
@@ -13,12 +11,11 @@ int main(){
     scanf("%d %d",&index ,&value);
 
     // reorder index
-for (int i = n; i >= index+1; i--){
+    for (int i = n; i >= index+1; i--){
         arry[i]=arry[i-1];
-        printf("%d ",i);
     
-}
-    arry[index] = arry[value];
+    }
+    arry[index] = value;
 
     for(int i =0; i<=n; i++){
         printf("%d ",arry[i]);
