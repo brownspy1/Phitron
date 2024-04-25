@@ -3,29 +3,28 @@
 int main(){
     int n;
     scanf("%d",&n);
-    int arry[n+1];
-    int min=arry[0],max=arry[1];
+    int arry[n];
     for (int i = 0; i < n; i++)
+    {scanf("%d",&arry[i]);}
+
+    int min=arry[0],minindex=0;
+    int max=arry[0],maxindex=0;
+
+    for (int i = 1; i < n; i++)
     {
-        scanf("%d",&arry[i]);
-    }
-    for (int i = 0; i < n; i++)
-    {
-        if (arry[i]>min)
+        if (min>arry[i])
         {
-            min = arry[i];
-            printf("%d \n",arry[i]);
+            min=arry[i];
+            minindex=i;
+        }if (max<arry[i])
+        {
+            max=arry[i];
+            maxindex=i;
         }
-        
     }
-
-    //  printf("%d ",min);
+    arry[minindex]=max,arry[maxindex]=min;
 
     for (int i = 0; i < n; i++)
-    {
-        printf("%d ",arry[i]);
-    }
-    
-    
+    {printf("%d ",arry[i]);}
     return 0;
 }
