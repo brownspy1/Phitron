@@ -4,7 +4,7 @@ int main(){
     int n;
     int count;
     scanf("%d",&count);
-    int arry[n+1];
+    int arry[n];
     int find;
 for (int i = 0; i < count; i++)
 {
@@ -23,7 +23,6 @@ for (int i = 0; i < count; i++)
         {
             flag=1;
         }
-        
     }
 
     if (flag==1)
