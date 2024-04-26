@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 int main(){
-    char arry[100000];
-    fgets(arry,100000,stdin);
+    char arry[100001];
+    scanf("%s",arry);
 
     for (int i = 0; i < strlen(arry); i++){
         if (arry[i]==',')
