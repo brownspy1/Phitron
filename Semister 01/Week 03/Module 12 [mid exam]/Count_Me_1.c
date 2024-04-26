@@ -2,21 +2,23 @@
 #include <stdio.h>
 int main(){
     int count;
+    scanf("%d",&count);
     int arry[count];
     for (int i = 0; i < count; i++)
     {
         scanf("%d",&arry[i]);
     }
     int di3=0,di2=0;
+    
     for (int i = 0; i < count; i++)
     {
-        if (arry[i]%3==0)
+        if (arry[i]%2==0)
         {
-            di3=di3+i;
+            di2++;
         }
-        else if (arry[i]%2==0)
+        else if (arry[i]%3==0)
         {
-            di2=di2+i;
+            di3++;
         }
     }
     printf("%d %d",di2,di3);
