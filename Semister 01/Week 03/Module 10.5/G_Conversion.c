@@ -1,5 +1,4 @@
 // Created by M.Mahadi on 2024-04-25 22:36:19
-//solve hoy nai
 #include <stdio.h>
 #include <string.h>
 int main(){
