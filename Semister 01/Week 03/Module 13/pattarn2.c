@@ -18,8 +18,6 @@ int main(){
         j--;
         k+=2;
         printf("\n");
-        
     }
-
     return 0;
 }
