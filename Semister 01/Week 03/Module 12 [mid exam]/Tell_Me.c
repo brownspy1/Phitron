@@ -8,7 +8,6 @@ int main(){
     int find;
 for (int i = 0; i < count; i++)
 {
-    
     scanf("%d",&n);
     int flag=0;
     for (int i = 0; i < n; i++)
@@ -31,9 +30,8 @@ for (int i = 0; i < count; i++)
     }
     else
     {
-        printf("NO");
+        printf("NO\n");
     }
 }
-
     return 0;
 }
