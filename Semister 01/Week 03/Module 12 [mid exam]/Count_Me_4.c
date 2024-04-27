@@ -1,22 +1,24 @@
-// Created by M.Mahadi on 2024-04-27 11:20:41
+// Created by M.Mahadi on 2024-04-27 16:45:57
 #include <stdio.h>
-#include <string.h>
 int main(){
-    char s[10001];
-    int count = 26;
-    scanf("%s",&s);
-    for (int i = 0; i <count; i++)
+    char arry[10001];
+    int cnt[26]={0};
+    scanf("%s",&arry);
+    int i=0;
+    while (arry[i]!='\0')
     {
-        int a=0;
-        if (s[i]!=s[i+1])
+        if (arry[i]>='a' && arry[i]<='z')
         {
-            printf("%c - 1\n",s[i]);
-        }else{
-            a++;
-            printf("%c - %d\n",s[i],a);
+            cnt[arry[i]-97]++;
         }
-        
+        i++;
     }
-    
+    for (int i = 0; i < 26; i++)
+    {
+        if (cnt[i]>0)
+        {
+            printf("%c - %d\n",i+97,cnt[i]);
+        }
+    }
     return 0;
 }
