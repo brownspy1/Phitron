@@ -14,7 +14,15 @@ int main()
         }
         for (int s = 1; s <= k; s++)
         {
-            printf("%d",s);
+            if (i%2!=0)
+            {
+                printf("#");
+            }else
+            {
+                printf("-");
+            }
+            
+            
         }
         if (i<=n-1)
         {
