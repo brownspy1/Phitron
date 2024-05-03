@@ -4,9 +4,9 @@ int main(){
     int n;
     scanf("%d",&n);
     int k=1,j=n-1;
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i < (n*2); i++)
     {
-        for (int  x = 1; x <= j; x++)
+        for (int x = 1; x <=j; x++)
         {
             printf(" ");
         }
@@ -20,34 +20,22 @@ int main(){
             {
                 printf("-");
             }
-        if (n%2==0)
+        }
+        printf("\n");
+        if (i<n)
         {
-            if (n%2<=i)
-            {
-                k+=2;
-                j--;
-            }else
-            {
-                k--;
-                j+=2;
-            }
+            k+=2;
+            j--;
         }else
         {
-            int temp = n-1;
-            if (temp%2<=i)
-            {
-                k+=2;
-                j--;
-            }else
-            {
-                k--;
-                j+=2;
-            }   
+            k-=2;
+            j++;
         }
-        }
+        
         
         
     }
+    
     
     return 0;
 }
