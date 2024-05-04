@@ -13,10 +13,10 @@ int main(){
    
     for (i; x>i ;i++,x--)
         {
-        //    int temp = arry[i];
-        //    arry[i] = arry[x];
-        //    arry[x] = temp; 
-        printf("%d %d\n",i,x);
+           int temp = arry[i];
+           arry[i] = arry[x];
+           arry[x] = temp; 
+        // printf("%d %d\n",i,x);
         }
 
     // while (i<x)
@@ -28,10 +28,10 @@ int main(){
     //        x--;
     // }
     
-    // for (int i = 0; i < n; i++)
-    // {
-    //     printf("%d ",arry[i]);
-    // }
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ",arry[i]);
+    }
     
     return 0;
 }
