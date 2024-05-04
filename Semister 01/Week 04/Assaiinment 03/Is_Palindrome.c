@@ -1,33 +1,32 @@
 // Created by M.Mahadi on 2024-05-03 21:16:37
 #include <stdio.h>
 #include <string.h>
+int is_palindrome(char arry[]) {
+    int n = strlen(arry);
+    int k=n-1;
+    int flag = 1;
+    for (int i = 0; i<k; i++,k--)
+    {
+        if (arry[i]!=arry[k])
+        {
+            flag = 0;
+            break;
+        }
+    }
+    return flag;
+
+}
 int main(){
     char arry[1001];
     scanf("%s",&arry);
-    int count = strlen(arry);
-    int x=count-1;
-    int flag=1;
-    for (int i = 0; x >i; i++,x--)
+    int flag = is_palindrome(arry);
+    if (flag==1)
     {
-        if (arry[i]!=arry[x])
-        {
-            flag=0;
-            break;
-        }
-        
-    }
-    if (flag==0)
-    {
-        printf("Not Palindrome");
+        printf("Palindrome");
     }else
     {
-    printf("Palindrome");
+        printf("Not Palindrome");
     }
-    
-    
-    
-   
-    
-    
+
     return 0;
 }
