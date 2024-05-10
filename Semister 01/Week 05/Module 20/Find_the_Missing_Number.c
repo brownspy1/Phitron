@@ -1,6 +1,5 @@
 // Created by M.Mahadi on 2024-05-10 18:16:01
 #include <stdio.h>
-#include <math.h>
 int main(){
     int count;
     scanf("%d",&count);
@@ -16,16 +15,26 @@ int main(){
         
 
         double result = (double)arry[0]/arry[1]/arry[2]/arry[3];
+        long long int new = result;
 
 
-
-        if (fmod(result,1.0)!=0.0)
+        if (result == new)
         {
-            printf("-1\n");
+            printf("%lld\n",new);
+            
         }else
         {
-            printf("%.0lf\n",result);
-        }      
+            printf("-1\n");
+        }    
+
+        // #include <math.h>
+        // if (fmod(result,1.0)!=0.0)
+        // {
+        //     printf("-1\n");
+        // }else
+        // {
+        //     printf("%.0lf\n",result);
+        // }        
     }
   
     return 0;
