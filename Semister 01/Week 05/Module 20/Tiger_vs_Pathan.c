@@ -35,10 +35,6 @@ int main(){
             printf("Draw\n");
         }
         
-        
-        
-        
-        
     }
     
     return 0;
