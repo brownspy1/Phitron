@@ -7,7 +7,7 @@ int main(){
     int valu;
     if (n%2!=0)
     {
-        valu=
+        
     }
     
     for (int i = 1; i <= 6; i++)
