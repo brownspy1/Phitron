@@ -1,8 +1,15 @@
 // Created by M.Mahadi on 2024-05-10 19:14:22
 #include <stdio.h>
 int main(){
-
+    int n;
+    scanf("%d",&n);
     int j = 4, k=0,l=0;
+    int valu;
+    if (n%2!=0)
+    {
+        valu=
+    }
+    
     for (int i = 1; i <= 6; i++)
     {
         for (int x = 0; x <=j; x++)
@@ -13,8 +20,7 @@ int main(){
         {
             printf("*");
         }
-       
- 
+
         printf("\n");
         if (i<6)
         {
@@ -33,7 +39,7 @@ int main(){
         {
             printf(" ");
         }
-        for (int x = 0; x < 1; x++)
+        for (int x = 0; x < n; x++)
         {
             printf("*");
         }
