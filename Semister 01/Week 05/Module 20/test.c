@@ -3,14 +3,14 @@
 int main(){
     int n;
     scanf("%d",&n);
-    int j = 4, k=0,l=0;
-    int valu;
+    int nx=(n+1)/2+5;
+    int j = nx-2, k=0,l=0;
     if (n%2!=0)
     {
         
     }
     
-    for (int i = 1; i <= 6; i++)
+    for (int i = 1; i <= nx; i++)
     {
         for (int x = 0; x <=j; x++)
         {
@@ -22,18 +22,21 @@ int main(){
         }
 
         printf("\n");
-        if (i<6)
+        if (i<nx)
         {
             j--;
             k+=2;
-        }else if (i>6)
+        }else if (i>nx)
         {
             k-=2;
             j++;
             
         }else
         {
-            for (int i = 0; i < 5; i++)
+        
+        }
+    }
+    for (int i = 0; i < 5; i++)
     {
         for (int x = 0; x < 5; x++)
         {
@@ -46,11 +49,6 @@ int main(){
         printf("\n");
         
     }
-        }
-        
-        
-    }
-    
     
     return 0;
 }
