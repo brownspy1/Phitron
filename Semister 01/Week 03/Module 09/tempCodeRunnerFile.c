@@ -1,4 +1,6 @@
-  for (int i = 5; i < 1+1; i++){
-        // arry[i]=arry[i-1];
-        printf("%d ",i);
+    int x = n;
+    for (int i = 0; i < n2; i++,x++)
+    {
+        arry[x]=arry2[i];
+        
     }
