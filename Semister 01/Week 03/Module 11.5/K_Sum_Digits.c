@@ -2,16 +2,16 @@
 #include <stdio.h>
 int main(){
     int n;
-    int arry[n+1];
+    scanf("%d",&n);
+    int arry[n];
     for (int i = 0; i < n; i++)
     {
         scanf("%d",&arry[i]);
     }
-    
     int add = 0;
     for (int i = 0; i < n; i++)
     {
-        add +=arry[i];
+        add +=arry[i]-'0';
     }
     printf("%d",add);
     return 0;
