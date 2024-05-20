@@ -7,17 +7,17 @@ int main(){
     scanf("%s",arry);
     count = strlen(arry);
     int x = count-1;
-    int flag = 0;
+    int flag = 1;
     for (int i = 0; x >i; i++,x--)
     {
         if (arry[i]!=arry[x])
         {
-            flag=1;
+            flag=0;
             break;
         }
     }
 
-    if (flag == 1)
+    if (flag == 0)
     {
         printf("NO");
     }else
