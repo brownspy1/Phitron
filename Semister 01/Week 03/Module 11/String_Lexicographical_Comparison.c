@@ -3,20 +3,21 @@
 int compare(char a[],char b[]){
     for (int i = 0;; i++)
     {
-        if (a[i]=='/0' && b[i]=='\0')
+        if (a[i]=='\0' && b[i]=='\0')
         {
             return 0;
             break;
-        }else if (a[i]=='\0')
+        }
+        else if (a[i]=='\0')
         {
             return 1;
             break;
-        }else if (b[i]=='\0')
+        }
+        else if (b[i]=='\0')
         {
             return 2;
             break;
         }
-
         if (a[i]<b[i])
         {
             return 1;
