@@ -12,7 +12,8 @@ void copy(char a[], char b[]){
 int main(){
     char a[100], b[100];
     scanf("%s %s",&a,&b);
-    copy(a, b);
+    // copy(a, b); //usar defain funson
+    strcpy(a,b);  // string.h hedar building funtion
     printf("%s",a);
     return 0;
 }
