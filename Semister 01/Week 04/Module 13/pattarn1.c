@@ -7,20 +7,20 @@ int main(){
     int f=1;
     for (int i = 1; i <=(n*2)-1; i++)
     {   //pattaen 1
-        for (int x = 1; x <=k; x++)
-        {
-            printf("*");
-        }
+    //     for (int x = 1; x <=k; x++)
+    //     {
+    //         printf("*");
+    //     }
 
-       //pattarn 2
-        for (int x = 1; x<=j; x++)
-        {
-            printf(" ");
-        }
-        for (int x = 1; x <= f; x++)
-        {
-            printf("*");
-        }
+    //    //pattarn 2
+    //     for (int x = 1; x<=j; x++)
+    //     {
+    //         printf(" ");
+    //     }
+    //     for (int x = 1; x <= f; x++)
+    //     {
+    //         printf("*");
+    //     }
         //pattarn 3
         for (int x = 1; x<=j; x++)
         {
@@ -34,12 +34,12 @@ int main(){
         if (i<=n-1)
         {
             k++;
-            j-=2;
+            j--;
             f+=2;
         }else
         {
             k--;
-            j+=2;
+            j++;
             f-=2;
         }
         printf("\n");
