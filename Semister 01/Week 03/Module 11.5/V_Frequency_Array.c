@@ -15,19 +15,12 @@ int main(){
     }
     for (int i = 0; i < N; i++)
     {
-        if (arry[i]>=1 && arry[i]<=M)
-        {
-            count[arry[i]]++;
-        }
+        count[arry[i]]++;
         
     }
-    for (int i = 0; i <= M; i++)
+    for (int i = 1; i <= M; i++)
     {
-        if (count[i]!=0)
-        {
-            printf("%d\n",count[i]);
-        }
-        
+        printf("%d\n",count[i]);
     }
     
     
