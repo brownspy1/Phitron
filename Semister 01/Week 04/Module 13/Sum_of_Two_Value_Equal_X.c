@@ -1,22 +1,19 @@
-// Created by M.Mahadi on 2024-04-28 20:42:34
+// Created by M.Mahadi on 2024-05-22 23:15:22
 #include <stdio.h>
 int main(){
-    // input from consol
-    int count;
-    scanf("%d",&count);
-    int arry[count];
-    int flag=0;
-    for (int i = 0; i < count; i++)
+    int n;
+    scanf("%d",&n);
+    int arry[n+1];
+    for (int i = 0; i < n; i++)
     {
         scanf("%d",&arry[i]);
     }
     int x;
     scanf("%d",&x);
-
-    // mul work from here
-    for (int i = 0; i < count-1; i++)
+    int flag = 0;
+    for (int i = 0; i < n-1; i++)
     {
-        for (int j = i+1; j < count; j++)
+        for (int j = 1; j < n; j++)
         {
             if (arry[i]+arry[j]==x)
             {
@@ -26,12 +23,12 @@ int main(){
         }
         
     }
-    if (flag==0)
-    {
-        printf("NO");
-    }else
+    if (flag==1)
     {
         printf("YES");
+    }else
+    {
+        printf("NO");
     }
     
     
