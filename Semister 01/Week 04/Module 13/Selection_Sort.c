@@ -8,21 +8,22 @@ int main(){
     {
         scanf("%d",&arry[i]);
     }
-    
     for (int i = 0; i < count-1; i++)
     {
-        for (int x = i+1; x < count; x++)
+        for (int j = i+1; j < count; j++)
         {
-            if (arry[i]>arry[x])
+            if (arry[i]>arry[j])
             {
-                int temp=arry[i];
-                arry[i]=arry[x];
-                arry[x]=temp;
+                int temp = arry[i];
+                arry[i]=arry[j];
+                arry[j]=temp;
             }
             
         }
         
     }
+    
+    
     for (int i = 0; i < count; i++)
     {
         printf("%d ",arry[i]);
