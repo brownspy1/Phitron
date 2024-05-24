@@ -8,7 +8,7 @@ int *fun()
     {
         cout << arry[i] << endl;
     }
-    -arry[0] = 10;
+    arry[0] = 10;
     arry[1] = 20;
     arry[2] = 30;
     arry[3] = 40;
