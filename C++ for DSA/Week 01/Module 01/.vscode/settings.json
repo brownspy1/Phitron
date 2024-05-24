@@ -1,0 +1,14 @@
+{
+	"[cpp]": {
+		"editor.defaultFormatter": "ms-vscode.cpptools"
+	},
+	"prettier.enable": true,
+	"prettier.endOfLine": "crlf",
+	"prettier.insertPragma": true,
+	"prettier.bracketSameLine": true,
+	"prettier.trailingComma": "all",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"files.associations": {
+		"iostream": "cpp"
+	}
+}
