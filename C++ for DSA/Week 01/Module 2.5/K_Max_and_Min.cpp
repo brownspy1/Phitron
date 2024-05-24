@@ -3,9 +3,9 @@
 using namespace std;
 int main()
 {
-    int mn = 32767;
-    int mx = -32768;
     int a;
+    int mn = 327670;
+    int mx = -327680;
     for (size_t i = 0; i < 3; i++)
     {
         cin >> a;
