@@ -6,10 +6,11 @@ int main()
     int n;
     cin >> n;
     int ar;
-    int mx = INT16_MIN;
+    int mx = 0;
     for (int i = 0; i < n; i++)
     {
         cin >> ar;
         mx = max(ar, mx);
-        }
+    }
+    cout << mx;
 }
