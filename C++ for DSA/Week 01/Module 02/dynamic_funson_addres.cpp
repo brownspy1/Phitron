@@ -10,6 +10,6 @@ int *mamory()
 int main()
 {
     int *a = mamory();
-    cout << "From main:" << a;
+    cout << "From main:" << *a;
     return 0;
 }
