@@ -24,6 +24,7 @@ int *fun()
 int main()
 {
     int *arry = fun();
+    delete[] arry;
     for (int i = 0; i < 5; i++)
     {
         cout << arry[i] << endl;

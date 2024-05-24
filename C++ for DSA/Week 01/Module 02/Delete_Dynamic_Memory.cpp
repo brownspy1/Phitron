@@ -11,13 +11,13 @@ int main()
         cin >> arry[i];
         list[i] = arry[i];
     }
-    delete arry;
+    delete[] arry;
     arry = new int[5];
     for (int i = 0; i < 3; i++)
     {
         arry[i] = list[i];
     }
-    delete list;
+    delete[] list;
     for (int i = 3; i < 5; i++)
     {
         cin >> arry[i];
