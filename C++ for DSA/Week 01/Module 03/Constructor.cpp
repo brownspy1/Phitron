@@ -1,6 +1,6 @@
 // Created by M.Mahadi on 2024-05-25 10:36:37
 #include <iostream>
-#include <bits/stdc++.h>
+#include <iomanip>
 using namespace std;
 class Student
 {
@@ -18,9 +18,9 @@ public:
 };
 int main()
 {
-    Student mahadi(743678, 12, 5.0);
+    Student mahadi(743678, 12, 5.000);
     cout << mahadi.roll << endl
          << mahadi.cls << endl
-         << mahadi.gpa;
+         << fixed << setprecision(2) << mahadi.gpa;
     return 0;
 }
