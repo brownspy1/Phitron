@@ -27,6 +27,11 @@ int main()
     cout << endl
          << usaR->roll << endl
          << usaR->cls << endl
+         << fixed << setprecision(2) << usaR->cgpa << endl;
+    delete usaR;
+    cout << endl
+         << usaR->roll << endl
+         << usaR->cls << endl
          << fixed << setprecision(2) << usaR->cgpa;
     return 0;
 }
