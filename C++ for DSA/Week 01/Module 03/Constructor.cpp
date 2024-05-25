@@ -5,19 +5,22 @@ using namespace std;
 class Student
 {
 public:
-    char name[100];
     int roll;
-    char season[10];
-    Student(char name[], int roll, char season)
+    int cls;
+    double gpa;
+    Student(int roll, int cls, double gpa)
     {
 
-        name = name;
-        roll = roll;
-        season = season;
+        this->roll = roll;
+        (*this).cls = cls;
+        this->gpa = gpa;
     }
 };
 int main()
 {
-
+    Student mahadi(743678, 12, 5.0);
+    cout << mahadi.roll << endl
+         << mahadi.cls << endl
+         << mahadi.gpa;
     return 0;
 }
