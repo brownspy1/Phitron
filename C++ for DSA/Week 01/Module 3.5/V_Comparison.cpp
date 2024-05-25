@@ -5,7 +5,7 @@ int main()
 {
     int a, b;
     char c;
-    bool result;
+    bool result=false;
     cin >> a >> c >> b;
     if (c == '<')
     {
@@ -17,13 +17,13 @@ int main()
     }
     else if (c == '=')
     {
-        result = a = b;
+        result = a == b;
     }
     else
     {
         result = false;
     }
-
+ 
     if (result)
     {
         cout << "Right" << endl;
@@ -32,6 +32,6 @@ int main()
     {
         cout << "Wrong" << endl;
     }
-
+ 
     return 0;
 }
