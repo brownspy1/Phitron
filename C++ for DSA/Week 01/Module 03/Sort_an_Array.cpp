@@ -10,7 +10,7 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> arry[i];
     // sort(arry, arry + n);
-    sort(arry, arry + n, greater<int>());
+    // sort(arry, arry + n, greater<int>());
     for (int i = 0; i < n; i++)
         cout << arry[i] << " ";
 
