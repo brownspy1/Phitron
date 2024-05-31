@@ -15,9 +15,9 @@ int main()
             cin >> arry[x];
         }
         bool result = false;
-        for (int a = 0; a < t - 2; a++)
+        for (int a = 0; a < t; a++)
         {
-            for (int b = a + 1; b < t - 1; b++)
+            for (int b = a + 1; b < t; b++)
             {
                 for (int c = b + 1; c < t; c++)
                 {

@@ -6,6 +6,7 @@
 using namespace std;
 int main()
 {
+    
     char arry[100005];
     while (cin.getline(arry, 100005))
     {

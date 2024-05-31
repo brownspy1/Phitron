@@ -6,7 +6,7 @@ class Student
 {
 public:
     int ID;
-    string Name;
+    char Name[100];
     char Season;
     int Marks;
 };
