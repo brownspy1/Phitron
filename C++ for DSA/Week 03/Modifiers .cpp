@@ -13,7 +13,7 @@ int main()
     cout << n << endl;
     n = "Hay this is new assain string";
     n.erase(8, 3);
-    n.replace(10, "mahadi");
+    n.replace(9, 0, "Mahadi ");
     cout << n << endl;
     n.assign("Mahadi");
     cout << n << endl;
