@@ -17,6 +17,7 @@ int main()
     cout << n << endl;
     n.assign("Mahadi");
     cout << n << endl;
-
+    n.insert(6, "kha");
+    cout << n << endl;
     return 0;
 }
