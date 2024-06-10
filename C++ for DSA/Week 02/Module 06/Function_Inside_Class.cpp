@@ -22,10 +22,16 @@ public:
              << "Total Marks: " << marks << endl
              << "Season: " << season << endl;
     }
+    int cgpa()
+    {
+        return marks / 20;
+    }
 };
 int main()
 {
-    user mahadi("Mahadi", 743678, 80, 'B');
+
+    user mahadi("Mahadi", 743678, 100, 'B');
     mahadi.detail();
+    cout << mahadi.cgpa() << ".00" << endl;
     return 0;
 }
