@@ -8,12 +8,17 @@ class student
 public:
     string name;
     int roll;
+    int marks;
 };
 bool validation(student a, student b)
 {
-    if (a.roll <= b.roll)
+    if (a.marks == b.marks)
     {
-        swap(a.roll, b.roll);
+        return a.roll < b.roll;
+    }
+    else if (a.marks < b.marks)
+    {
+        return true;
     }
 }
 int main()
@@ -25,13 +30,13 @@ int main()
     {
         cin.ignore();
         getline(cin, list[i].name);
-        cin >> list[i].roll;
+        cin >> list[i].roll >> list[i].marks;
     }
 
     sort(list, list + n, validation);
     for (int i = 0; i < n; i++)
     {
-        cout << list[i].name << " " << list[i].roll << endl;
+        cout << list[i].name << " " << list[i].marks << " " << list[i].roll << endl;
     }
 
     return 0;
