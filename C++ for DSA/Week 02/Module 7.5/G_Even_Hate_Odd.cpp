@@ -3,6 +3,8 @@
 using namespace std;
 int main()
 {
-
+    int n;
+    int num[n];
+    int count;
     return 0;
 }
