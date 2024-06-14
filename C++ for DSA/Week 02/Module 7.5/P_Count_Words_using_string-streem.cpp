@@ -2,26 +2,29 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
+#include <sstream>
 using namespace std;
 int main()
 {
     string n;
     getline(cin, n);
+    stringstream ss(n);
+    string word;
     int count = 0;
-    bool insid_word = false;
-    for (char c : n)
+    while (ss >> word)
     {
-        if (isalpha(c))
+        bool val = false;
+        for (char c : word)
         {
-            if (insid_word == false)
+
+            if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
             {
-                count++;
+                val = true;
             }
-            insid_word = true;
         }
-        else
+        if (val == true)
         {
-            insid_word = false;
+            count++;
         }
     }
     printf("%d", count);
