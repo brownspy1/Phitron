@@ -19,9 +19,6 @@ int main(){
     
     for (int i = 0; i < n/2; i++)
     {
-        // char temp = list[i].season;
-        // list[i].season = list[n-i-1].season;
-        // list[n-i-1].season = temp;
         swap(list[i].season,list[n-i-1].season);
     }
     

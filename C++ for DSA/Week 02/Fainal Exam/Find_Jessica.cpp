@@ -1,6 +1,7 @@
 // Created by M.Mahadi on 2024-06-27 22:20:48
 #include <iostream>
 #include <sstream>
+#include <string>
 using namespace std;
 int main(){
     string name;
