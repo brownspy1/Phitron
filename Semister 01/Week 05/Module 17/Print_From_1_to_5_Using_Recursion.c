@@ -5,7 +5,7 @@ void recarson(int i){
     printf(" %d\n",i);
     recarson(i-1);
    
-    
+     
 }
 int main(){
     recarson(6);
