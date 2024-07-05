@@ -4,11 +4,11 @@ void recarson(int i){
     if (i>1) return;
     printf(" %d\n",i);
     recarson(i-1);
-   
      
 }
 int main(){
-    recarson(6);
+     
+    recarson(6); 
     return 0;
 }
 
