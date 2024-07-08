@@ -13,7 +13,7 @@ int main(){
     while (x--)
     {
         int a,b;
-        cin>>a>>b;
+        cin>>a>>b;.
         int calculate = 0;
         for (int i = a-1; i < b; i++)
         {
