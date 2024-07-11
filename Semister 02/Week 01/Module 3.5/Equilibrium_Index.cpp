@@ -1,6 +1,5 @@
 // Created by M.Mahadi on 2024-07-10 23:52:51
 #include <iostream>
-#include <vector>
 using namespace std;
 int main(){
     int count;
@@ -11,16 +10,24 @@ int main(){
         cin>>array[i];
     }
     
-    int prefix[count];
-    prefix[0]=array[0];
-    for (int i = 1; i < count; i++)
-    {
-        prefix[i] = prefix[i-1]+array[i];
-    }
-    int head = prefix[0], tail = prefix[count-1];
+    int sum = 0;
 
     for (int i = 0; i < count; i++)
     {
+        sum += array[i];
+    }
+
+    int pr_sum=0;
+    for (int i = 0; i < count; i++)
+    {
+      int left = pr_sum;
+      int right = sum-pr_sum-array[i];
+      if (left==right)
+      {
+        cout<<i<<endl;
+        break;
+      }
+      pr_sum+=array[i];
         
     }
     
