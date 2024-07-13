@@ -20,6 +20,7 @@ void insart_tail(Node *&head, int v)
     if (head == NULL)
     {
         head = node;
+        return;
     }
     Node *temp = head;
 
@@ -32,31 +33,43 @@ void insart_tail(Node *&head, int v)
 
 void print_link_list(Node * head){
     Node *temp = head;
-    cout<<"Your Value is : "
+    cout<<"Your Value is : ";
     while (temp != NULL)
     {
-        cout<<temo->value
+        cout<<temp->value;
+        temp = temp->next;
     }
     
 }
 int main()
 {
     Node* head = NULL;
-    // Node* head = new Node(10);
-    cout << "Choose your option" << endl
+    while (true)
+    {
+        cout << "Choose your option" << endl
          << "1: Insart in tail" << endl
          << "2.Print Linklist" << endl
          << "3.Exit" << endl
          << "Enter:";
     int option;
     cin>>option;
-        if (option == 1)
+        switch (option)
         {
+        case 1:
             cout<<"Entar your value:";
             int n;
             cin>>n;
             insart_tail(head,n);
+        case 2:
+             print_link_list(head);
+        case 3:
+            cout<<"Thanks for using us!";
+            break;
+        default:
+            break;
         }
-        
+    }
+    
+    
     return 0;
 }
