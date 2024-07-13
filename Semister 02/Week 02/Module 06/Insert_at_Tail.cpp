@@ -13,7 +13,7 @@ public:
         this->next = NULL;
     }
 };
-void insart_tail(Node *&head, int v)
+void insert_tail(Node *&head, int v)
 {
     Node *node = new Node(v);
 
@@ -31,45 +31,56 @@ void insart_tail(Node *&head, int v)
     temp->next = node;
 }
 
-void print_link_list(Node * head){
+void print_link_list(Node *head)
+{
     Node *temp = head;
-    cout<<"Your Value is : ";
+    cout << "Your Value is : ";
     while (temp != NULL)
     {
-        cout<<temp->value;
+        cout << temp->value;
+        if (temp->next!=NULL)
+        {
+            cout<< " , ";
+        }
+        
         temp = temp->next;
     }
-    
+    cout<<endl;
 }
 int main()
 {
-    Node* head = NULL;
+    Node *head = NULL;
     while (true)
     {
-        cout << "Choose your option" << endl
-         << "1: Insart in tail" << endl
-         << "2.Print Linklist" << endl
-         << "3.Exit" << endl
-         << "Enter:";
-    int option;
-    cin>>option;
-        switch (option)
-        {
-        case 1:
-            cout<<"Entar your value:";
-            int n;
-            cin>>n;
-            insart_tail(head,n);
-        case 2:
-             print_link_list(head);
-        case 3:
-            cout<<"Thanks for using us!";
-            break;
-        default:
-            break;
+        cout<<endl;
+        cout << "1:Insart in tail" << endl
+             << "2.Print Linklist" << endl
+             << "3.Exit" << endl
+             << "Enter:";
+        int option;
+        cin >> option;
+        switch(option){
+            case 1: {
+                cout << "Enter your value: ";
+                int n;
+                cin >> n;
+                insert_tail(head, n);
+                break;}
+
+            case 2: {
+                print_link_list(head);
+                break;}
+
+            case 3: {
+                cout << "Thanks for using us!" << endl;
+                return 0;}
+
+            default: {
+                cout << "Invalid option. Please choose again." << endl;
+                break;}
         }
+        
     }
-    
-    
+
     return 0;
 }
