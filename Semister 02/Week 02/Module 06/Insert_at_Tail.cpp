@@ -13,22 +13,50 @@ public:
         this->next = NULL;
     }
 };
-void insart_tail(Node *head, int value)
+void insart_tail(Node *&head, int v)
 {
+    Node *node = new Node(v);
+
     if (head == NULL)
     {
-        /* code */
+        head = node;
+    }
+    Node *temp = head;
+
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = node;
+}
+
+void print_link_list(Node * head){
+    Node *temp = head;
+    cout<<"Your Value is : "
+    while (temp != NULL)
+    {
+        cout<<temo->value
     }
     
 }
 int main()
 {
-    Node
+    Node* head = NULL;
+    // Node* head = new Node(10);
     cout << "Choose your option" << endl
          << "1: Insart in tail" << endl
          << "2.Print Linklist" << endl
          << "3.Exit" << endl
          << "Enter:";
+    int option;
+    cin>>option;
+        if (option == 1)
+        {
+            cout<<"Entar your value:";
+            int n;
+            cin>>n;
+            insart_tail(head,n);
+        }
         
     return 0;
 }
