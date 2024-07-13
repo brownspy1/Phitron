@@ -1,4 +1,4 @@
-// Created by M.Mahadi on 2024-07-13 22-29-05
+// Created by M.Mahadi on 2024/07/13 Time 20:10:26
 #include <iostream>
 using namespace std;
 class Node
@@ -20,6 +20,9 @@ void insert_tail(Node *&head, int v)
     if (head == NULL)
     {
         head = node;
+        cout << endl
+             << "Successful inserted in head!" << endl
+             << endl;
         return;
     }
     Node *temp = head;
@@ -29,6 +32,9 @@ void insert_tail(Node *&head, int v)
         temp = temp->next;
     }
     temp->next = node;
+    cout << endl
+         << "Successful inserted in tail!" << endl
+         << endl;
 }
 
 void print_link_list(Node *head)
@@ -38,48 +44,66 @@ void print_link_list(Node *head)
     while (temp != NULL)
     {
         cout << temp->value;
-        if (temp->next!=NULL)
+        if (temp->next != NULL)
         {
-            cout<< " , ";
+            cout << " , ";
         }
-        
+
         temp = temp->next;
     }
-    cout<<endl;
+    cout << endl;
+}
+
+void insert_any_position(Node *head, int pos, int val)
+{
+    Node *Newnode = new Node(val);
+    Node *Temp = head;
+    for (int i = 1; i <= pos - 1; i++)
+    {
+        Temp = Temp->next;
+    }
+    Newnode->next = Temp->next;
+    Temp->next = Newnode;
+    cout << endl
+         << "Successful inserted!" << endl
+         << endl;
 }
 int main()
 {
     Node *head = NULL;
     while (true)
     {
-        cout<<endl;
-        cout << "1:Insart in tail" << endl
+        cout << endl;
+        cout << "1:Insert in tail" << endl
              << "2.Print Linklist" << endl
-             << "3.Exit" << endl
+             << "3.Insert any position" << endl
+             << "4.Exit" << endl
              << "Enter:";
         int option;
         cin >> option;
-        switch(option){
-            case 1: {
-                cout << "Enter your value: ";
-                int n;
-                cin >> n;
-                insert_tail(head, n);
-                break;}
-
-            case 2: {
-                print_link_list(head);
-                break;}
-
-            case 3: {
-                cout << "Thanks for using us!" << endl;
-                return 0;}
-
-            default: {
-                cout << "Invalid option. Please choose again." << endl;
-                break;}
+        if (option == 1)
+        {
+            cout << "Enter your value: ";
+            int n;
+            cin >> n;
+            insert_tail(head, n);
+        }else if (option == 2)
+        {
+            print_link_list(head);
+        }else if (option == 3)
+        {
+            int pos, val;
+            cout << "Enter position:";
+            cin >> pos;
+            cout << "Enter Value:";
+            cin >> val;
+            insert_any_position(head, pos, val);
+        }else if (option == 4)
+        {
+            cout << "Thanks for using us!" << endl;
+            return 0;
         }
-        
+
     }
 
     return 0;
