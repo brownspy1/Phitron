@@ -41,30 +41,36 @@ void insert_a_value_in_specific_position(Node *&head,int position,int value){
     {
        newNode->next = head;
        head = newNode;
-    }else{
-        Node *Temp = head;
-        bool flag = false;
-        for (int i = 1; i <=position-1; i++)
+       print_link_list(head);
+       return;
+    }
+    Node* Temp = head;
+    bool flag = false;
+    for (int i = 1; i < position; i++)
+    {
+        Temp = Temp->next;
+        if (Temp==NULL)
         {
-            if (Temp!=NULL)
-            {
-                Temp = Temp->next;
-            }else
-            {
-                flag = true;
-            }
-        }
-        if (flag)
-        {
+            flag = true;
             cout<<"Invalid"<<endl;
-        }else
-        {
-            print_link_list(head);
+            return;
         }
-
+        
+    }
+    newNode->next = Temp->next;
+    Temp->next = newNode;
+    if (flag)
+    {
+        cout<<"Invalid"<<endl;
+    }else
+    {
+        print_link_list(head);
     }
     
+    
+    
 }
+
 int main(){
     Node * head =NULL;
     int value;
