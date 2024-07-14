@@ -104,8 +104,23 @@ void delete_from_tail(Node * head){
     {
         temp = temp->next;
     }
-    
-     
+    // akon ami last node ar ager node asi
+    Node * Deleted = temp->next;
+    temp->next = NULL;
+    delete Deleted;
+    cout<<endl<<endl<<"Successfully Deleted from Tail";
+}
+void delete_from_any_position(Node* head,int position){
+    Node *temp = head;
+    for (int i = 1; i <=position-1; i++)
+    {
+        temp = temp->next;
+    }
+    //ami akon deleted posison ar ager position asi
+    Node * Deleted= temp->next;
+    temp->next = temp->next->next;
+    delete Deleted;
+    cout<<endl<<endl<<"Successfully Deleted from Position: "<<position<<endl;
 }
 int main()
 {
@@ -123,7 +138,7 @@ int main()
              << "7.Deletion at Head" << endl
              << "8.Deletion at Tail" << endl
              << "9.Deletion at a Specific Position" << endl
-             << "10.Exit"
+             << "10.Exit"<<endl
              << "Enter:";
         int op;
         cin >> op;
@@ -181,7 +196,7 @@ int main()
         }
         else if (op == 8)
         {
-            // delete_from_tail();
+            delete_from_tail(head);
         }
         else if (op == 9)
         {
