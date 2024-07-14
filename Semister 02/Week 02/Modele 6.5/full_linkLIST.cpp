@@ -13,58 +13,83 @@ public:
         this->next = NULL;
     }
 };
-void Insert_at_head(Node* &head, int v){
-    Node * newNode = new Node(v);
+void Insert_at_head(Node *&head, int v)
+{
+    Node *newNode = new Node(v);
     newNode->next = head;
     head = newNode;
-    cout<<endl<<"Successfully Inserted at head"<<endl;
+    cout << endl
+         << "Successfully Inserted at head" << endl;
 }
-void Insert_at_tail(Node * head,int v){
-    Node * NewNode = new Node(v);
-    Node *temp = head; 
-    while (temp->next!=NULL)
+void Insert_at_tail(Node *head, int v)
+{
+    Node *NewNode = new Node(v);
+    Node *temp = head;
+    while (temp->next != NULL)
     {
         temp = temp->next;
     }
     // temp akon last node ase
     temp->next = NewNode;
-    cout<<endl<<"Successfully Inserted at tail"<<endl;
+    cout << endl
+         << "Successfully Inserted at tail" << endl;
 }
-void Insert_at_any_position(Node*head,int position , int value){
-    Node * newNode = new Node(value);
-    if (position==0)
+void Insert_at_any_position(Node *head, int position, int value)
+{
+    Node *newNode = new Node(value);
+    if (position == 0)
     {
-        Insert_at_head(head,value);
+        Insert_at_head(head, value);
         return;
     }
-    Node* temp = head;
-    for (int i = 1; i <= position-1; i++)
+    Node *temp = head;
+    for (int i = 1; i <= position - 1; i++)
     {
-        if (temp!=NULL)
+        if (temp != NULL)
         {
             temp = temp->next;
-        }else
+        }
+        else
         {
-            cout<<endl<<"Invalid Index"<<endl;
-        }   
+            cout << endl
+                 << "Invalid Index" << endl;
+        }
     }
     newNode->next = temp->next;
     temp->next = newNode;
-    cout<<"Successfully inserted at position:"<<position<<endl;
-
+    cout << "Successfully inserted at position:" << position << endl;
 }
-void Print_link_list_item(Node* head){
-    Node * temp = head;
+void Print_link_list_item(Node *head)
+{
+    Node *temp = head;
     while (temp != NULL)
     {
-        cout<<temp->value;
+        cout << temp->value;
         if (temp->next != NULL)
         {
-            cout<<" , ";
+            cout << " , ";
         }
         temp = temp->next;
     }
-    
+}
+void count_link_list_size(Node *head)
+{
+    Node *temp = head;
+    int count = 0;
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+    cout << "Your List Size is: " << count << endl;
+}
+void creat_a_linkList(Node * head,int value){
+    if (head==NULL)
+    {
+        Insert_at_head(head, value);
+        return;
+    }
+    Insert_at_tail(head,value);
 }
 int main()
 {
@@ -82,42 +107,57 @@ int main()
              << "7.Deletion at Head" << endl
              << "8.Deletion at Tail" << endl
              << "9.Deletion at a Specific Position" << endl
+             << "10.Exit"
              << "Enter:";
         int op;
         cin >> op;
         if (op == 1)
         {
-            // creat_a_linkList();
+            int value ;
+            while (true)
+            {
+                cin>>value;
+                if (value==-1) break;
+                creat_a_linkList(head,value);
+
+                
+            }
+            
+            
         }
         else if (op == 2)
         {
-            // count_link_list_size();
+            count_link_list_size(head);
         }
         else if (op == 3)
         {
-            // Print_link_list_item();
+            Print_link_list_item(head);
         }
         else if (op == 4)
         {
-           int value;
-           cout<<endl<<"Enter Your value:";
-           cin>>value;
-           Insert_at_head(head,value);
+            int value;
+            cout << endl
+                 << "Enter Your value:";
+            cin >> value;
+            Insert_at_head(head, value);
         }
         else if (op == 5)
         {
             int value;
-            cout<<endl<<"Enter Your value:";
-            Insert_at_tail(head,value);
+            cout << endl
+                 << "Enter Your value:";
+            Insert_at_tail(head, value);
         }
         else if (op == 6)
         {
-            int value,position;
-            cout<<endl<<"Enter Your position:";
-            cin>>position;
-            cout<<endl<<"Enter Your value:";
-            cin>>value;
-            Insert_at_any_position(head,position,value);
+            int value, position;
+            cout << endl
+                 << "Enter Your position:";
+            cin >> position;
+            cout << endl
+                 << "Enter Your value:";
+            cin >> value;
+            Insert_at_any_position(head, position, value);
         }
         else if (op == 7)
         {
@@ -130,7 +170,12 @@ int main()
         else if (op == 9)
         {
             // delete_from_any_position();
+        }else if (op==10)
+        {
+            cout<<endl<<endl<<"Thanks For Using Us!";
+            break;
         }
+        
         else
         {
             cout << endl
