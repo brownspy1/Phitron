@@ -91,6 +91,22 @@ void creat_a_linkList(Node * head,int value){
     }
     Insert_at_tail(head,value);
 }
+void delete_from_head(Node *&head){
+    Node *deleted = head;
+    head = head->next;
+    delete deleted;
+    cout<<endl<<endl<<"Successfully Deleted from Head";
+
+}
+void delete_from_tail(Node * head){
+    Node *temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    
+     
+}
 int main()
 {
     Node *head = NULL;
@@ -161,7 +177,7 @@ int main()
         }
         else if (op == 7)
         {
-            // delete_from_head();
+           delete_from_head(head);
         }
         else if (op == 8)
         {
