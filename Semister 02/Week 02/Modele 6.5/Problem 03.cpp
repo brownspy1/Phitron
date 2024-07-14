@@ -54,14 +54,14 @@ int main(){
     if (n%2 == 0)
     {
         Node * temp = Head;
-        for (int i = 1; i <= n-4; i++)
+        for (int i = 1; i <= n/2-1; i++)
         {
             temp = temp->next;
         }
         cout<<temp->value<<" "<<temp->next->value;
     }else{
         Node * temp = Head;
-        for (int i = 1; i <= n-3; i++)
+        for (int i = 1; i <= n/2; i++)
         {
             temp = temp->next;
         }
