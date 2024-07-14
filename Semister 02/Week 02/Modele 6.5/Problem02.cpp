@@ -39,13 +39,31 @@ int main(){
         if (value==-1) break;
         insert_at_tail(Head,value);
     }
-    int frequency[100];
+    int frequency[100] ={0};
     Node * temp = Head;
     while (temp != NULL)
     {
         frequency[temp->value]++;
         temp = temp->next;
     }
+    bool flag = false;
+    for (int i = 0; i<100; i++)
+    {
+        if (frequency[i]>1)
+        {
+            flag = true;
+        }
+        // cout<<i <<" : "<<frequency[i]<<endl;
+        
+    }
+    if (flag)
+    {
+        cout<<"YES";
+    }else
+    {
+        cout<<"NO";
+    }
+    
     
     
     return 0;
