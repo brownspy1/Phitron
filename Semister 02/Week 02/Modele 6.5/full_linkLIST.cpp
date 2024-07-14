@@ -17,7 +17,7 @@ void Insert_at_head(Node* &head, int v){
     Node * newNode = new Node(v);
     newNode->next = head;
     head = newNode;
-    cout<<endl<<"Inserted at head"<<endl;
+    cout<<endl<<"Successfully Inserted at head"<<endl;
 }
 void Insert_at_tail(Node * head,int v){
     Node * NewNode = new Node(v);
@@ -28,7 +28,7 @@ void Insert_at_tail(Node * head,int v){
     }
     // temp akon last node ase
     temp->next = NewNode;
-    cout<<endl<<"Inserted at tail"<<endl;
+    cout<<endl<<"Successfully Inserted at tail"<<endl;
 }
 void Insert_at_any_position(Node*head,int position , int value){
     Node * newNode = new Node(value);
@@ -52,6 +52,19 @@ void Insert_at_any_position(Node*head,int position , int value){
     temp->next = newNode;
     cout<<"Successfully inserted at position:"<<position<<endl;
 
+}
+void Print_link_list_item(Node* head){
+    Node * temp = head;
+    while (temp != NULL)
+    {
+        cout<<temp->value;
+        if (temp->next != NULL)
+        {
+            cout<<" , ";
+        }
+        temp = temp->next;
+    }
+    
 }
 int main()
 {
@@ -99,7 +112,12 @@ int main()
         }
         else if (op == 6)
         {
-            // Insert_at_any_position();
+            int value,position;
+            cout<<endl<<"Enter Your position:";
+            cin>>position;
+            cout<<endl<<"Enter Your value:";
+            cin>>value;
+            Insert_at_any_position(head,position,value);
         }
         else if (op == 7)
         {
