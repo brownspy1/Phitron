@@ -38,7 +38,7 @@ int counting(Node * Head){
         count++;
         temp =temp->next;
     }
-    
+    return count;
     
 }
 int main(){
@@ -50,7 +50,17 @@ int main(){
         if (value == -1) break;
         insert_at_tail(Head,value);
     }
-
+    int n = counting(Head);
+    if (n%2 == 0)
+    {
+        Node * temp = Head;
+        for (int i = 1; i < n; i++)
+        {
+            /* code */
+        }
+        
+    }
+    
     
     return 0;
 }
