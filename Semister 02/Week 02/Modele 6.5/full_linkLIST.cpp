@@ -117,7 +117,7 @@ void delete_from_tail(Node * &head){
     }else
     {
         Node *temp = head;
-        while (temp != NULL)
+        while (temp->next->next != NULL)
         {
             temp = temp->next;
         }
