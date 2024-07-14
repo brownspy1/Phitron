@@ -25,15 +25,14 @@ void insert_value_in_link_list(Node* &head, int value){
     temp->next = newNode;
 }
 bool check_sorted(Node *head){
-    Node *temp = head;
-    while (temp!= NULL && temp->next!=NULL)
+    Node*temp = head;
+    while (temp!=NULL && temp->next!=NULL)
     {
         if (temp->value > temp->next->value)
         {
-            
             return false;
         }
-        temp = temp->next;
+        temp = temp->next; 
     }
     return true;
 }
@@ -46,20 +45,15 @@ int main(){
         if (value == -1)break;
         insert_value_in_link_list(head,value);
     }
-    // Node* temp = head;
-    // while (temp!=NULL)
-    // {
-    //     cout<<temp->value<<" ";
-    //     temp = temp->next;
-    // }
-    bool flag = check_sorted(head);
-    if (flag)
+   
+
+    if (check_sorted(head))
     {
         cout<<"YES";
     }else{
         cout<<"NO";
     }
-    // cout<<check_sorted(head);
+
     
     return 0;
 }
