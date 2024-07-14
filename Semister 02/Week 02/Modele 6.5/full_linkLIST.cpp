@@ -106,18 +106,30 @@ void delete_from_head(Node *&head){
     cout<<endl<<endl<<"Successfully Deleted from Head";
 
 }
-void delete_from_tail(Node * head){
-    Node *temp = head;
-    while (temp->next != NULL)
+void delete_from_tail(Node * &head){
+    if (head == NULL)
     {
-        temp = temp->next;
+        cout<<endl<<endl<<"Head is NULL"<<endl;
+    }else if (head->next == NULL)
+    {
+        delete head;
+        head = NULL;
+    }else
+    {
+        Node *temp = head;
+        while (temp != NULL)
+        {
+            temp = temp->next;
+        }
+        // akon ami last node ar ager node asi
+        Node * Deleted = temp->next;
+        temp->next = NULL;
+        delete Deleted;
+        cout<<endl<<endl<<"Successfully Deleted from Tail";
     }
-    // akon ami last node ar ager node asi
-    Node * Deleted = temp->next;
-    temp->next = NULL;
-    delete Deleted;
-    cout<<endl<<endl<<"Successfully Deleted from Tail";
+
 }
+
 void delete_from_any_position(Node* head,int position){
     Node *temp = head;
     for (int i = 1; i <=position-1; i++)
@@ -185,6 +197,7 @@ int main()
             int value;
             cout << endl
                  << "Enter Your value:";
+            cin>>value;
             Insert_at_tail(head, value);
         }
         else if (op == 6)
@@ -210,6 +223,7 @@ int main()
         {
             int position;
             cout<<"Entar your position";
+            cin>>position;
             delete_from_any_position(head,position);
         }else if (op==10)
         {
