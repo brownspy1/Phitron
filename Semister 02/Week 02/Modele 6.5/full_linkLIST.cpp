@@ -21,9 +21,16 @@ void Insert_at_head(Node *&head, int v)
     cout << endl
          << "Successfully Inserted at head" << endl;
 }
-void Insert_at_tail(Node *head, int v)
+void Insert_at_tail(Node *&head, int v)
 {
+
     Node *NewNode = new Node(v);
+    if (head==NULL)
+    {
+        head = NewNode;
+        return;
+    }
+    
     Node *temp = head;
     while (temp->next != NULL)
     {
@@ -34,7 +41,7 @@ void Insert_at_tail(Node *head, int v)
     cout << endl
          << "Successfully Inserted at tail" << endl;
 }
-void Insert_at_any_position(Node *head, int position, int value)
+void Insert_at_any_position(Node *&head, int position, int value)
 {
     Node *newNode = new Node(value);
     if (position == 0)
@@ -53,6 +60,7 @@ void Insert_at_any_position(Node *head, int position, int value)
         {
             cout << endl
                  << "Invalid Index" << endl;
+                 return;
         }
     }
     newNode->next = temp->next;
@@ -83,7 +91,7 @@ void count_link_list_size(Node *head)
     }
     cout << "Your List Size is: " << count << endl;
 }
-void creat_a_linkList(Node * head,int value){
+void creat_a_linkList(Node * &head,int value){
     if (head==NULL)
     {
         Insert_at_head(head, value);
@@ -200,7 +208,9 @@ int main()
         }
         else if (op == 9)
         {
-            // delete_from_any_position();
+            int position;
+            cout<<"Entar your position";
+            delete_from_any_position(head,position);
         }else if (op==10)
         {
             cout<<endl<<endl<<"Thanks For Using Us!";
