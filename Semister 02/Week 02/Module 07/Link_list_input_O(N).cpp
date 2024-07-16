@@ -16,8 +16,8 @@ public:
 int main(){
     while (true)
     {
-        
-        cout<<"1.Insart"<<endl<<"2.Print";
+
+        cout<<endl<<"1.Insart all"<<endl<<"2.Print all"<<endl<<"3.Delete last";
     }
     
     return 0;
