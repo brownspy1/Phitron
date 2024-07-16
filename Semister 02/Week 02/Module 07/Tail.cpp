@@ -20,6 +20,7 @@ void print(Node * Head){
         cout<<temp->value<<" ";
         temp = temp->next;
     }
+    cout<<endl;
     
 }
 int count(Node * head){
@@ -32,6 +33,29 @@ int count(Node * head){
     }
     return count;
 }
+void insart_at_head(Node *&head,int value){
+  Node *newNode = new Node(value);
+  newNode->next = head;
+  head = newNode;
+}
+void insert_at_tail(Node *&tail,int value){
+  Node * newNode = new Node(value);
+  tail->next = newNode;
+  tail = newNode  ;
+
+}
+void instar_any_position(Node *&Head,int position,int value){
+  Node *newNode = new Node(value);
+  
+  
+  Node *temp = Head;
+  for (int i = 1; i < position; i++)
+  {
+   temp =  temp->next; 
+  }
+  newNode->next = temp->next;
+  temp->next = newNode;
+}
 int main(){
   Node * head = new Node(10);
   Node * a = new Node(20);
@@ -43,6 +67,7 @@ int main(){
   a->next= b;
   b->next=c;
   int position;
+  print(head);
   cout<<"Enter position:";
   cin>>position;
   int value;
@@ -50,14 +75,22 @@ int main(){
   cin>>value;
   if (position == 0)
   {
-    // insart_at_head();
+    insart_at_head(head,value);
+    print(head);
   }else if (position == count(head))
   {
-    // insert_at_tail();
-  }else if (position>count(head))
+    insert_at_tail(tail,value);
+    print(head);
+  }else if (position<count(head))
+
   {
-    cout<<"Invalid index!";
+    instar_any_position(head,position,value);
+    print(head);
+  }else
+  {
+     cout<<"Invalid index!";
   }
+  
   
   
   
