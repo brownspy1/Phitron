@@ -113,9 +113,21 @@ int main(){
                     if(value == -1) break;
                     Insart_all(head,value);
                 }
-                break;
             case 2:
-                
+                print(head);
+            case 3:
+                int value;
+                cout<<"Entar Value:";
+                cin>>value;
+                insert_tail(head,tail,value);
+            case 4:
+                int position;
+                cout<<"Entar a Deleted position:";
+                Deleted(head,position);
+            case 5:
+                break;
+            default:
+                break;
         }
         
     }
