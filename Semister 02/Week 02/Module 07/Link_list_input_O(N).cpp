@@ -13,7 +13,7 @@ public:
         this->next = NULL;
     }
 };
-void Insart_all(Node*&Head,int value){
+void Insart_all(Node*&Head,Node*&tail,int value){
     Node * newNode = new Node(value);
     
     if (Head == NULL)
@@ -27,6 +27,7 @@ void Insart_all(Node*&Head,int value){
         temp = temp->next;
     }
     temp->next = newNode;
+    tail = newNode;
 
 }
 void insert_tail(Node *&Head,Node *&tail,int value){
@@ -103,33 +104,32 @@ int main(){
         <<"4.Delete last"<<endl
         <<"Enter:";
         cin>>option;
-        switch (option)
-        {
-            case 1:
-                int value;
-                while (true)
-                {
-                    cin>>value;
-                    if(value == -1) break;
-                    Insart_all(head,value);
-                }
-            case 2:
-                print(head);
-            case 3:
-                int value;
-                cout<<"Entar Value:";
-                cin>>value;
-                insert_tail(head,tail,value);
-            case 4:
-                int position;
-                cout<<"Entar a Deleted position:";
-                Deleted(head,position);
-            case 5:
-                break;
-            default:
-                break;
+        if (option == 1) {
+            int value;
+            while (true) {
+                cin >> value;
+                if (value == -1) break;
+                Insart_all(head,tail, value);
+            }
+        } else if (option == 2) {
+            print(head);
+        } else if (option == 3) {
+            int value;
+            cout << "Enter value: ";
+            cin >> value;
+            insert_tail(head, tail, value);
+        } else if (option == 4) {
+            int position;
+            cout << "Enter the position to delete: ";
+            cin >> position;
+            Deleted(head, position);
+        } else if (option == 5) {
+            return 0;
+        } else {
+            cout << "Invalid option, please try again." << endl;
         }
-        
     }
+        
+    
     return 0;
 }
