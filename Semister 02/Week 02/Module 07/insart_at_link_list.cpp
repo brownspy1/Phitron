@@ -30,7 +30,15 @@ void insart_at_any_position(Node * &head,int value){
     }
 
 }
-
+void print(Node * Head){
+    Node * temp = Head;
+    while (temp!= NULL)
+    {
+        cout<<temp->value<<" ";
+        temp = temp->next;
+    }
+    
+}
      
 
 int main(){
@@ -42,6 +50,7 @@ int main(){
   head->next = a;
   a->next= b;
   b->next=c;
-
+insart_at_any_position(head,50);
+print(head);
 return 0;
 }
