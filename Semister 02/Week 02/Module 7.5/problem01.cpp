@@ -56,7 +56,7 @@ int main(){
         if (value2 == -1) break;
         insert_link(Head2,tail2,value2);
     }
-d
+
     if (count(Head1) == count(Head2))
     {
         cout<<"YES";
