@@ -26,21 +26,21 @@ void input(Node *&Head, int value, Node *&Tail)
     Tail->next = NewNode;
     Tail = NewNode;
 }
+
 int finding(Node *Head, int value)
 {
     Node *Temp = Head;
     int index = 0;
-    bool flg = false;
     while (Temp != NULL)
     {
-        index++;
         if (Temp->value == value)
         {
-            return index - 1;
+            return index;
         }
-
+        index++;
         Temp = Temp->next;
     }
+    return -1;
 }
 int main()
 {
