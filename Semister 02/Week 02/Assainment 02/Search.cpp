@@ -26,10 +26,21 @@ void input(Node *&Head, int value, Node *&Tail)
     Tail->next = NewNode;
     Tail = NewNode;
 }
-void finding(Node *Head, int value)
+int finding(Node *Head, int value)
 {
     Node *Temp = Head;
     int index = 0;
+    bool flg = false;
+    while (Temp != NULL)
+    {
+        index++;
+        if (Temp->value == value)
+        {
+            return index - 1;
+        }
+
+        Temp = Temp->next;
+    }
 }
 int main()
 {
@@ -47,6 +58,10 @@ int main()
                 break;
             input(Head, value, Tail);
         }
+        int find;
+        cin >> find;
+        int ans = finding(Head, find);
+        cout << ans << endl;
     }
 
     return 0;
