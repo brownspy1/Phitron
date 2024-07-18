@@ -34,14 +34,30 @@ void print(Node *head)
         cout << i->value << " ";
     }
 }
-void remove_duplicat(Node *Head)
+
+void remove_duplicates(Node *Head)
 {
     Node *Temp = Head;
-    for (Node *i = Temp; i != NULL; i = i->next)
+    while (Temp != NULL)
     {
-        /* code */
+        Node *cout = Temp;
+        while (cout->next != NULL)
+        {
+            if (Temp->value == cout->next->value)
+            {
+                Node *Deleted = cout->next;
+                cout->next = cout->next->next;
+                delete Deleted;
+            }
+            else
+            {
+                cout = cout->next;
+            }
+        }
+        Temp = Temp->next;
     }
 }
+
 int main()
 {
     Node *Head = NULL;
@@ -54,5 +70,7 @@ int main()
             break;
         input(Head, value, Tail);
     }
+    remove_duplicates(Head);
+    print(Head);
     return 0;
 }
