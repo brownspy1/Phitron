@@ -9,6 +9,7 @@ class Node {
     Node(int value){
         this->value = value;
         this->next =NULL;
+        
     }
 };
 void insert_at_head(Node * &Head,int value){
