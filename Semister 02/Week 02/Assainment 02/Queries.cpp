@@ -1,11 +1,12 @@
 // Created by M.Mahadi on 2024-07-18 Time:10-48-43
-/*
-1.Insart at head
-2.Insert at tail
-3.Delete from position
-*/
-#include <iostream>
+/*                     \
+1.Insart at head       \
+2.Insert at tail       \
+3.Delete from position \
+*/                     \
+#include<iostream>
 using namespace std;
+
 class Node
 {
 public:
@@ -18,6 +19,7 @@ public:
         this->next = NULL;
     }
 };
+
 int count(Node *Head)
 {
     Node *Temp = Head;
@@ -29,6 +31,7 @@ int count(Node *Head)
     }
     return count;
 }
+
 void Insert_at_head(Node *&Head, Node *&Tail, int Value)
 {
     Node *NewNode = new Node(Value);
@@ -36,10 +39,6 @@ void Insert_at_head(Node *&Head, Node *&Tail, int Value)
     {
         Head = NewNode;
         Tail = NewNode;
-        if (Tail == NULL)
-        {
-            Tail = NewNode;
-        }
     }
     else
     {
@@ -47,6 +46,7 @@ void Insert_at_head(Node *&Head, Node *&Tail, int Value)
         Head = NewNode;
     }
 }
+
 void insert_at_Tail(Node *&Head, Node *&Tail, int Value)
 {
     Node *NewNode = new Node(Value);
@@ -62,22 +62,38 @@ void insert_at_Tail(Node *&Head, Node *&Tail, int Value)
     }
 }
 
-void deleted(Node *&Head, int position)
+void deleted(Node *&Head, Node *&Tail, int position)
 {
     if (Head == NULL)
         return;
+
     if (position == 0)
     {
         Node *Deleted = Head;
         Head = Head->next;
         delete Deleted;
-    }
-    else
-    {
-        for (int i = 1; i < position; i++)
+        if (Head == NULL)
         {
+            Tail = NULL;
         }
+        return;
     }
+
+    Node *Temp = Head;
+    for (int i = 1; i < position && Temp->next != NULL; i++)
+    {
+        Temp = Temp->next;
+    }
+    if (Temp->next == NULL)
+        return;
+
+    Node *Deleted = Temp->next;
+    Temp->next = Temp->next->next;
+    if (Temp->next == NULL)
+    {
+        Tail = Temp;
+    }
+    delete Deleted;
 }
 
 void print(Node *Head)
@@ -90,37 +106,34 @@ void print(Node *Head)
     }
     cout << endl;
 }
+
 int main()
 {
     Node *Head = NULL;
     Node *Tail = NULL;
-    int n;
-    cin >> n;
-    while (n--)
+    int Q;
+    cin >> Q;
+    while (Q--)
     {
-        int ask, value;
-        cin >> ask >> value;
-        if (ask == 0)
+        int X, V;
+        cin >> X >> V;
+        if (X == 0)
         {
-            Insert_at_head(Head, Tail, value);
+            Insert_at_head(Head, Tail, V);
             print(Head);
         }
-        else if (ask == 1)
+        else if (X == 1)
         {
-            insert_at_Tail(Head, Tail, value);
+            insert_at_Tail(Head, Tail, V);
             print(Head);
         }
-        else if (ask == 2)
+        else if (X == 2)
         {
-            if (count(Head) < value)
+            if (count(Head) > V)
             {
-                deleted(Head, value);
-                print(Head);
+                deleted(Head, Tail, V);
             }
-            else
-            {
-                print(Head);
-            }
+            print(Head);
         }
     }
 
