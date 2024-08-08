@@ -12,7 +12,7 @@ int main(){
         }
         
     }
-    
+    //secondary Diagonal Matrix
     bool flag = true;
     if (rowe != colume)
     {
@@ -23,6 +23,11 @@ int main(){
     {
         for (int j = 0; j < colume; j++)
         {
+            if (rowe-1==i+j)
+            {
+                continue;
+            }
+            
             if (array[i][j]!=0)
             {
                 flag = false;
@@ -31,5 +36,14 @@ int main(){
         }
         
     }
+    if (flag)
+    {
+        printf("Secondary Diagonal Matrix");
+    }else
+    {
+        printf("Not Secondary Diagonal Matrix");
+    }
+    
+    
     return 0;
 }
