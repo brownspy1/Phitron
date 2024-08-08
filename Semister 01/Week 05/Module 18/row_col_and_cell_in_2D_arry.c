@@ -1,6 +1,7 @@
 // Created by M.Mahadi on 2024-08-08 Time:04-15-46
 #include <stdio.h>
 int main(){
+
     int array[10][9] ={
         //0  1   2   3   4   5   6   7   8
         {10, 11, 12, 13, 14, 15, 16, 17, 18}, //0
@@ -20,12 +21,29 @@ int main(){
     int opt; scanf("%d",&opt);
     if (opt == 1)
     {
+        // 1 : access cell;
         int cal,row; scanf("%d %d",&cal,&row);
         printf("%d ",array[row][cal]);
     }
     if (opt == 2)
     {
-        int cal,row; scanf("%d %d",&cal,&row);
+        // 2 : access row;
+        int row; scanf("%d",&row);
+        for (int i = 0; i < 9; i++)
+        {
+            printf("%d ",array[row][i]);
+        }
+        
+    }
+    if (opt == 3)
+    {
+        // 3 : access colum
+        int colum; scanf("%d",&colum);
+        for (int i = 0; i < 10; i++)
+        {
+            printf("%d \n",array[i][colum]);
+        }
+        
     }
     
     

@@ -2,5 +2,8 @@
     "files.associations": {
         "*.cpp": "cpp",
         "stdio.h": "c"
-    }
+    },
+    "cSpell.words": [
+        "Mahadi"
+    ]
 }
