@@ -1,9 +1,10 @@
 // Created by M.Mahadi on 2024-08-09 Time:22:52:30
 #include <stdio.h>
+#include <limits.h>
 int max(int ar[], int n, int i)
 {
-    if (i == 0)
-        return 0;
+    if (n == i)
+        return INT_MIN;
     int val = max(ar, n, i + 1);
     if (ar[i] > val)
     {
@@ -26,3 +27,4 @@ int main()
     int ans = max(array, n, 0);
     printf("%d", ans);
     return 0;
+}
