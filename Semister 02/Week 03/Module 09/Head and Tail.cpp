@@ -55,6 +55,7 @@ void insert_at_tail(Node *&Head, Node *&Tail, int value)
         return;
     }
     Tail->next = NewNode;
+    NewNode->prev = Tail;
 };
 int main()
 {
@@ -62,5 +63,7 @@ int main()
     Node *Tail = NULL;
     int value, position;
     cin >> value, position;
+    print(Head);
+    reverse(Tail);
     return 0;
 }
