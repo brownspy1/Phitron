@@ -57,8 +57,7 @@ void insert_at_Tail(Node *&Head, Node *&Tail, int Value)
 
 void deleted(Node *&Head, Node *&Tail, int position)
 {
-    if (Head == NULL)
-        return;
+
     if (position == 0)
     {
         Node *Deleted = Head;
