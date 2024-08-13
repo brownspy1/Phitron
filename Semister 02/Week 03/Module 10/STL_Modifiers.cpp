@@ -15,7 +15,17 @@ int main()
     myList.insert(next(myList.begin(), 4), {500, 600, 700});
     myList.erase(next(myList.begin(), 2), next(myList.begin(), 8)); // if i uzse end() delet all from my pointer
     replace(myList.begin(), myList.end(), 500, 100);
-    find(myList.begin(), myList.end(), );
+    list<int>::iterator it;
+    it = find(myList.begin(), myList.end(), 80);
+    if (it == myList.end())
+    {
+        cout << "Not found";
+    }
+    else
+    {
+        cout << "Found" << endl;
+    }
+
     // myList2.assign(myList.begin(), myList.end());
     // myList2.push_back(100);
     // myList2.push_back(110);
