@@ -23,6 +23,25 @@ void reverse(Node *tail)
         tail = tail->prev;
     }
 }
+void print(Node *head)
+{
+    while (head != NULL)
+    {
+        cout << head->value << " ";
+        head = head->next;
+    }
+}
+void reverse_list(Node *head, Node *tail)
+{
+    Node *i = head;
+    Node *j = tail;
+    while (i != j && i->next != j)
+    {
+        swap(i->value, j->value);
+        i = i->next;
+        j = j->prev;
+    }
+}
 int main()
 {
     Node *Head = new Node(10);
@@ -43,6 +62,9 @@ int main()
 
     c->next = d;
     d->prev = c;
-    reverse(tail);
+    reverse_list(Head, tail);
+    // reverse(tail);
+    cout << endl;
+    print(Head);
     return 0;
 }
