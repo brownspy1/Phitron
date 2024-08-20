@@ -1,8 +1,7 @@
-// Created by M.Mahadi on 2024-08-19 Time:23-10-16
+// info: Created by M.Mahadi on 2024-08-19 Time:23-10-16
 #include <iostream>
 #include <list>
 using namespace std;
-
 class myStack
 {
 private:
@@ -30,6 +29,7 @@ public:
         return myList.empty();
     }
 };
+
 int main()
 {
     myStack StackOne;
