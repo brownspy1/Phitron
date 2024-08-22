@@ -9,15 +9,30 @@ private:
     int cnt = 0;
 
 public:
-    void push() {}
-    void pop() {}
+    void push(int v)
+    {
+        myList.push_back(v);
+    }
+    void pop()
+    {
+        myList.pop_back();
+    }
     int top() {}
     bool empty() {}
+    int size() {}
 };
 class Queue
 {
 private:
+    list<int> myList;
+    int cnt = 0;
+
 public:
+    void push() {}
+    void pop() {}
+    int top() {}
+    bool empty() {}
+    int size() {}
 };
 int main()
 {
