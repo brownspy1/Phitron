@@ -1,5 +1,9 @@
 {
     "cSpell.words": [
         "Mahadi"
-    ]
+    ],
+    "files.associations": {
+        "*.cpp": "cpp",
+        "iostream": "cpp"
+    }
 }

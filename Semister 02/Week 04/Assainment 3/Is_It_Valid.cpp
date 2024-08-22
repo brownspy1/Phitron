@@ -3,9 +3,7 @@
 #include <string>
 #include <stack>
 using namespace std;
-bool valid(string myst)
-{
-}
+
 int main()
 {
     int n;
@@ -13,10 +11,26 @@ int main()
     cin.ignore();
     while (n--)
     {
-        cin.ignore();
         string myString;
         getline(cin, myString);
-        if (valid(myString))
+
+        stack<char> st;
+        for (auto &&i : myString)
+        {
+            if (i == '0' && !st.empty() && st.top() == '1')
+            {
+                st.pop();
+            }
+            else if (i == '1' && !st.empty() && st.top() == '0')
+            {
+                st.pop();
+            }
+            else
+            {
+                st.push(i);
+            }
+        }
+        if (st.empty())
         {
             cout << "YES" << endl;
         }
