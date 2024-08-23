@@ -15,11 +15,16 @@ public:
         this->right = NULL;
     }
 };
-void Traversal(Node *Root)
+void PreOrder(Node *Root)
 {
+    if (Root == NULL)
+    {
+        return;
+    }
+
     cout << Root->value << " ";
-    Traversal(Root->left);
-    Traversal(Root->right);
+    PreOrder(Root->left);
+    PreOrder(Root->right);
 }
 int main()
 {
@@ -44,6 +49,6 @@ int main()
     b->right = d;
     d->left = f;
     d->right = g;
-    Traversal(Root);
+    PreOrder(Root);
     return 0;
 }
