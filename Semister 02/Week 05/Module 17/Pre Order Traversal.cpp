@@ -15,7 +15,12 @@ public:
         this->right = NULL;
     }
 };
-
+void Traversal(Node *Root)
+{
+    cout << Root->value << " ";
+    Traversal(Root->left);
+    Traversal(Root->right);
+}
 int main()
 {
     Node *Root = new Node(10);
@@ -39,6 +44,6 @@ int main()
     b->right = d;
     d->left = f;
     d->right = g;
-
+    Traversal(Root);
     return 0;
 }
