@@ -3,5 +3,9 @@
         "Kore",
         "teke"
     ],
-    "cSpell.language": "en"
+    "cSpell.language": "en",
+    "files.associations": {
+        "*.cpp": "cpp",
+        "iostream": "cpp"
+    }
 }
