@@ -1,7 +1,7 @@
 // Created by M.Mahadi on 2024-08-24 Time:23-10-51
 #include <iostream>
 #include <queue>
-
+#include <math.h>
 using namespace std;
 class Node
 {
@@ -55,25 +55,18 @@ Node *Input()
     }
     return root;
 }
-int count_leaf(Node *root)
+int countMaxHight(Node *root)
 {
     if (root == NULL)
-    {
-
         return 0;
-    }
-    if (root->left == NULL && root->right == NULL)
-    {
-        return 1;
-    }
-    int l = count_leaf(root->left);
-    int r = count_leaf(root->right);
-    return l + r;
+    int l = countMaxHight(root->left);
+    int r = countMaxHight(root->right);
+    return max(l, r) + 1;
 }
 int main()
 {
     Node *root = Input();
-    int n = count_leaf(root);
+    int n = countMaxHight(root);
     cout << n;
     return 0;
 }
