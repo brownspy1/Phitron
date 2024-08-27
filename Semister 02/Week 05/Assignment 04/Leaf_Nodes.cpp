@@ -51,8 +51,30 @@ Node *input()
     }
     return root;
 }
+vector<int> v;
+void print(Node *root)
+{
+    if (!root)
+        return;
+    if (!root->left && !root->right)
+    {
+        v.push_back(root->value);
+    }
+    print(root->left);
+    print(root->right);
+}
 int main()
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    Node *root = input();
+    print(root);
+
+    sort(v.begin(), v.end(), greater<int>());
+    for (auto &&i : v)
+    {
+        cout << i << " ";
+    }
 
     return 0;
 }
