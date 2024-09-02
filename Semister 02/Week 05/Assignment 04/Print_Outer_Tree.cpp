@@ -51,13 +51,45 @@ Node *input()
     }
     return root;
 }
-void myLeft() {};
-void myRight() {};
+void myLeft(Node *root)
+{
+    if (!root)
+        return;
+    if (root->left)
+    {
+        myLeft(root->left);
+        cout << root->value << " ";
+    }
+    if (!root->left)
+    {
+        myLeft(root->right);
+        cout << root->value << " ";
+    }
+};
+void myRight(Node *root)
+{
+    if (!root)
+        return;
+    if (root->right)
+    {
+        cout << root->value << " ";
+        myRight(root->right);
+    }
+    if (!root->right)
+    {
+        cout << root->value << " ";
+        myRight(root->left);
+    }
+};
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     Node *root = input();
-
+    if (!root)
+        return 0;
+    myLeft(root->left);
+    cout << root->value << " ";
+    myRight(root->right);
     return 0;
 }

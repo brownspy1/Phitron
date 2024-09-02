@@ -51,7 +51,7 @@ Node *input()
     }
     return root;
 }
-int counting(Node *root)
+int counting(Node *root) // mot node koto gulo
 {
     if (!root)
         return 0;
@@ -59,7 +59,7 @@ int counting(Node *root)
     int r = counting(root->right);
     return l + r + 1;
 }
-int level(Node *root)
+int level(Node *root) // node level koto gulo
 {
     if (!root)
         return 0;
