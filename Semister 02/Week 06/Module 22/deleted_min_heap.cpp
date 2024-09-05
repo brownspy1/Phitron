@@ -8,7 +8,7 @@ void input(vector<int> &v, int x)
     while (curent_idx != 0)
     {
         int parent_idx = (curent_idx - 1) / 2;
-        if (v[parent_idx] < v[curent_idx])
+        if (v[parent_idx] > v[curent_idx])
         {
             swap(v[parent_idx], v[curent_idx]);
         }
@@ -29,12 +29,12 @@ void deleted(vector<int> &v)
         int valid = v.size() - 1;
         if (left <= valid && right <= valid)
         {
-            if (v[left] >= v[right] && v[curent_idx] < v[left])
+            if (v[left] <= v[right] && v[curent_idx] > v[left])
             {
                 swap(v[curent_idx], v[left]);
                 curent_idx = left;
             }
-            else if (v[right] >= v[left] && v[curent_idx] < v[right])
+            else if (v[right] <= v[left] && v[curent_idx] > v[right])
             {
                 swap(v[curent_idx], v[right]);
                 curent_idx = right;
@@ -44,7 +44,7 @@ void deleted(vector<int> &v)
         }
         else if (left <= valid)
         {
-            if (v[left] > v[curent_idx])
+            if (v[left] < v[curent_idx])
             {
                 swap(v[left], v[curent_idx]);
                 curent_idx = left;
@@ -54,7 +54,7 @@ void deleted(vector<int> &v)
         }
         else if (right <= valid)
         {
-            if (v[right] > v[curent_idx])
+            if (v[right] < v[curent_idx])
             {
                 swap(v[right], v[curent_idx]);
                 curent_idx = right;
