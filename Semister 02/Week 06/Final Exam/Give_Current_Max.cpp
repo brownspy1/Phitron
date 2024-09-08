@@ -41,6 +41,7 @@ int main()
         int roll, marks;
         cin >> name >> roll >> marks;
         student data(name, roll, marks);
+        user.push(data);
     }
     int x;
     cin >> x;
@@ -54,13 +55,14 @@ int main()
             int roll, marks;
             cin >> name >> roll >> marks;
             student data(name, roll, marks);
-            cout << user.top().name << " " << user.top().roll << " " << user.top().marks;
+            user.push(data);
+            cout << user.top().name << " " << user.top().roll << " " << user.top().marks << endl;
         }
         else if (c == 1)
         {
             if (!user.empty())
             {
-                cout << user.top().name << " " << user.top().roll << " " << user.top().marks;
+                cout << user.top().name << " " << user.top().roll << " " << user.top().marks << endl;
             }
             else
             {
@@ -69,7 +71,22 @@ int main()
         }
         else if (c == 2)
         {
-            /* code */
+            if (!user.empty())
+            {
+                user.pop();
+                if (!user.empty())
+                {
+                    cout << user.top().name << " " << user.top().roll << " " << user.top().marks << endl;
+                }
+                else
+                {
+                    cout << "Empty" << endl;
+                }
+            }
+            else
+            {
+                cout << "Empty" << endl;
+            }
         }
     }
 
