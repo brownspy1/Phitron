@@ -14,7 +14,7 @@ int main()
     //     }
     // }
     memset(adj, 0, sizeof(adj));
-    for (int i = 0; i < n; i++)
+    while (n--)
     {
         int a, b;
         cin >> a >> b;
