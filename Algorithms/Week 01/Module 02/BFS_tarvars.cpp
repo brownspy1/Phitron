@@ -13,7 +13,7 @@ void BFS(int src){
         par.pop();
 
         cout<<parant<< " ";
-    for (auto i : v[parant])
+    for (int i : v[parant])
     {
         if (vis[i] == false)
         {
