@@ -3,8 +3,9 @@
 using namespace std;
 vector<int> adjList[6];
 bool vis[6];
-void DFS_travars(int src){
-    cout<<src<<" ";
+void DFS_travars(int src)
+{
+    cout << src << " ";
     vis[src] = true;
     for (int i : adjList[src])
     {
@@ -12,9 +13,7 @@ void DFS_travars(int src){
         {
             DFS_travars(i);
         }
-        
     }
-    
 }
 int main()
 {
@@ -27,8 +26,9 @@ int main()
         adjList[a].push_back(b);
         adjList[b].push_back(a);
     }
-    int src;cin>>src;
-    memset(vis,false,sizeof(vis));
+    int src;
+    cin >> src;
+    memset(vis, false, sizeof(vis));
     DFS_travars(src);
 
     return 0;
