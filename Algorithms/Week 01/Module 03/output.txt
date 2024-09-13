@@ -1,16 +1,1 @@
-G
-H
-D
-C
-B
-A
-E
-F
-J
-K
-L
-P
-O
-N
-M
-I
+0 4 5 1 2 3 
