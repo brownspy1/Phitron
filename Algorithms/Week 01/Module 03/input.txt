@@ -1,7 +1,9 @@
-3 4
-....
-....
-....
-2 0
-
-
+6 6
+MAHADI
+MISSMA
+MYCLAS
+LOVEIS
+FUNNYH
+YOUARE
+0 0
+5 5
