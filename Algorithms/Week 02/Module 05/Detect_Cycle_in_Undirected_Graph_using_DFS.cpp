@@ -17,7 +17,7 @@ void dfs(int parent){
         
         if (!vis[child])
         {
-            vis[child] = true;
+            // vis[child] = true;
             parentArry[child] = parent;
             dfs(child);
         }
