@@ -1,5 +1,0 @@
-PreOrder = root,left,right
-PostOrder = left,right,root
-InOrder = left,root,right
-
-if you can use any from this 3 option you mast be use recursion
