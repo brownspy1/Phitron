@@ -1,68 +1,84 @@
-// Created by M.Mahadi on 2024-09-23 Time:22:22:43
+
+// Created by M.Mahadi on 2024-09-20 Time:19-10-29
 #include <bits/stdc++.h>
+using namespace std;
 #define __fast                        \
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL);
 #define ll long long int
-using namespace std;
-const int V = 1e3 + 5;
-ll mtx[V][V];
-int v, e;
-bool Floyd()
+ll INF = 1e18;
+class edge
 {
-    for (int k = 1; k <= v; k++)
+public:
+    int first;
+    int second;
+    ll third;
+    edge(int a, int b, ll c)
     {
-        for (int i = 1; i <= v; i++)
-        {
-            for (int j = 1; j <= v; j++)
-            {
-                if (mtx[i][k] != INT32_MAX && mtx[k][j] != INT32_MAX && mtx[i][k] + mtx[k][j] < mtx[i][j])
-                {
-                    mtx[i][j] = mtx[i][k] + mtx[k][j];
-                }
-            }
-        }
+        first = a;
+        second = b;
+        third = c;
     }
-    for (int i = 1; i <= v; i++)
+};
+const int N = 1e5+5;
+vector<edge> edgeList;
+int n,e;
+ll dis[N];
+void Bellman_ford(int n,vector<edge> list,int s)
+{
+    dis[s] = 0; 
+    for (int i = 1; i <= n-1; i++)
     {
-        if (mtx[i][i] < 0)
+       for (edge child : list)
+       {
+            int a = child.first; // connection 1
+            int b = child.second; // connection 2
+            int c = child.third; // cost
+            if (dis[a] < INF && dis[a]+c < dis[b])
+            {
+                dis[b] = dis[a]+c;
+            }
+       }
+       
+    }
+
+}
+bool cycle(vector<edge> ls)
+{
+    for (edge i : ls)
+    {
+        int a = i.first;
+        int b = i.second;
+        int c = i.third;
+
+        if (dis[a] < INF && dis[a] + c < dis[b])
         {
             return true;
         }
-        return false;
     }
+    return false;
 }
+
 int main()
 {
-    __fast;
-    cin >> v >> e;
-    for (int i = 1; i <= v; i++)
-    {
-        for (int j = 1; j <= v; j++)
-        {
-            if (i == j)
-            {
-                mtx[i][j] = 0;
-            }
-            else
-            {
-                mtx[i][j] = INT32_MAX;
-            }
-        }
-    }
-
+    __fast
+    cin>>n>>e;
     while (e--)
     {
-        ll a, b, c;
-        cin >> a >> b >> c;
-        mtx[a][b] = min(mtx[a][b], c);
+        int a,b,c;cin>>a>>b>>c;
+        edgeList.push_back(edge(a,b,c));
     }
-
+    for (int i = 1; i <= n; i++)
+    {
+        dis[i] = INF;
+    }
+    
     int s;
     cin >> s;
+    Bellman_ford(n,edgeList,s);
     int t;
     cin >> t;
-    if (Floyd())
+    if (cycle(edgeList))
     {
         cout << "Negative Cycle Detected" << endl;
         return 0;
@@ -73,9 +89,9 @@ int main()
         int a;
         cin >> a;
 
-        if (mtx[s][a] != INT32_MAX)
+        if (dis[a] != INF)
         {
-            cout << mtx[s][a] << endl;
+            cout << dis[a] << endl;
         }
         else
         {
@@ -85,3 +101,4 @@ int main()
 
     return 0;
 }
+    
