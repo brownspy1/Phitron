@@ -4,12 +4,13 @@ using namespace std;
 const int X  = 1e5+5;
 int par[X];
 int dsUsize[X];
-int 
+int level[X];
 void initial_dsu(int n){
     for (int i = 0; i < n; i++)
     {
         par[i] = -1;
         dsUsize[i] = 1;
+        level[i] = 0;
     }
     
 }
@@ -30,7 +31,18 @@ int dsu_find(int n){
 void dsu_union(int node1,int node2){
     int adminA = dsu_find(node1);
     int adminB = dsu_find(node2);
-    par[adminA] = adminB;
+    if(level[adminA] > level[adminB]){
+        par[adminB] = adminA;
+    }else if(level[adminB] > level[adminA])
+    {
+        par[adminA] = adminB;
+    }else
+    {
+        par[adminB] = adminA;
+        level[adminA]++; 
+    }
+    
+    
 }
 //by size
 // void dsu_union(int node1,int node2){
@@ -52,7 +64,7 @@ int main(){
     dsu_union(3,4);
     dsu_union(4,5);
     dsu_union(2,5);
-    cout<<dsu_find(1)<<endl;
-    cout<<dsu_find(4)<<endl;
+    cout<<dsu_find(3)<<endl;
+    cout<<dsu_find(0)<<endl;
     return 0;
 }
