@@ -83,9 +83,6 @@ int main()
     }
 
     cout<<cost<<endl;
-    cout << "Parent array after union operations:" << endl;
-    for (int i = 1; i <= n; i++) {
-        cout << "Node " << i << " -> Leader " << dsu_find(i) << endl;
-    }
+    
     return 0;
 }
