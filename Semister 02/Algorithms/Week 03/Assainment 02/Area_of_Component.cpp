@@ -8,7 +8,7 @@ using namespace std;
 vector<pair<int,int>> d = {{0,1},{0,-1},{-1,0},{1,0}};
 const int N = 1e3+10;
 int n,m;
-vector<char> adj[N][N];
+char adj[N][N];
 bool vis[N][N];
 vector<int> cnt;
 bool valid(int ci,int cj){
@@ -16,9 +16,9 @@ bool valid(int ci,int cj){
 }
 void bfs(int si, int sj){
     queue<pair<int,int>> pq;
-    vis[si][sj];
+    vis[si][sj] = true;
     pq.push({si,sj});
-    int node_cnt;
+    int node_cnt = 1;
     while (!pq.empty())
     {
         pair<int,int> par = pq.front();
@@ -49,10 +49,40 @@ int main()
     fast
     cin>>n>>m;
     memset(vis,false,sizeof(vis));
-    while (m--)
+    for (int i = 0; i < n; i++)
     {
-        /* code */
+        for (int j = 0; j < m; j++)
+        {
+            cin>>adj[i][j];
+        }
+        
     }
+    int comp = false;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (!vis[i][j] && adj[i][j] != '-')
+            {
+                bfs(i,j);
+                comp = true;
+            }
+            
+        }
+        
+    }
+    
+    
+    sort(cnt.begin(),cnt.end());
+    if (comp)
+    {
+        cout<<cnt.front();
+    }else
+    {
+        cout<<-1;
+    }
+    
+    
     
   return 0;
 }
