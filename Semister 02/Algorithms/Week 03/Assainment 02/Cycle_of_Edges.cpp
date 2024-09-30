@@ -7,7 +7,7 @@ int n,m;
 int parent[N];
 int usize[N];
 void dsu_init(int n){
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
     {
         parent[i] = -1;
         usize[i] = 1;
@@ -17,7 +17,7 @@ void dsu_init(int n){
 
 int dsu_find(int n){
     if (parent[n] == -1) return n;
-    int leader = dsu_find(parent[n]);
+    int leader  = dsu_find(parent[n]);
     parent[n] = leader;
     return leader;
 }
@@ -35,12 +35,29 @@ void dsu_union(int a, int b){
         parent[leaderA] = leaderB;
         usize[leaderB] += usize[leaderA];
     }
-    
-    
 }
 int main()
 {
-  fast
-    
+    fast
+    cin>>n>>m;
+    int cnt = 0;
+    dsu_init(n);
+    while (m--)
+    {
+        int x,y;
+        cin>>x>>y;
+        int leaderOfX = dsu_find(x); 
+        int leaderOfY = dsu_find(y); 
+        if (leaderOfX == leaderOfY)
+        {
+            cnt++;
+        }else
+        {
+            dsu_union(x,y);
+        }
+        
+        
+    }
+    cout<<cnt;
   return 0;
 }
