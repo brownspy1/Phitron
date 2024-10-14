@@ -1,3 +1,6 @@
 https://codeforces.com/problemset/problem/233/A
 https://codeforces.com/contest/2014/problem/B
 https://codeforces.com/problemset/problem/1033/A
+https://codeforces.com/contest/2014/submission/285673830
+https://codeforces.com/contest/233/submission/285668790
+https://codeforces.com/contest/1033/submission/285679936
