@@ -35,9 +35,6 @@ bool isPossible(const string &word1, const string &word2) {
         if (word1[i] == word2[j]) {
             j++; 
         }
-        if (j == word2.length()) { 
-            return true;
-        }
     }
     return j == word2.length(); 
 }

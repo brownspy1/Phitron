@@ -1,39 +1,37 @@
-// Created by @brownspy1 on 2024-10-15 Time:21:54:23
 #include <bits/stdc++.h>
 using namespace std;
-
-int maxBalls(vector<int>& balls) {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
+#define ll long long
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> ar(n);
     
-    sort(balls.rbegin(), balls.rend());
-    set<int> used;
-    int totalBalls = 0;
-
-    for (int count : balls) {
-        while (count > 0 && used.find(count) != used.end()) {
-            count--;
-        }
-        if (count > 0) {
-            used.insert(count);
-            totalBalls += count;
-        }
+    for (int i = 0; i < n; i++) {
+        cin >> ar[i];
     }
 
-    return totalBalls;
+  
+    sort(ar.rbegin(), ar.rend());
+
+ 
+    ll ans = 0;
+    ll prev = INT_MAX;  
+
+    for (int i = 0; i < n; i++) {
+       
+        if (ar[i] >= prev) {
+            ar[i] = max(0, prev - 1); 
+        }
+        ans += ar[i]; 
+        prev = ar[i]; 
+    }
+
+    cout << ans << endl;
 }
 
 int main() {
-    int n;
-    cin >> n;
-    vector<int> balls(n);
-
-    for (int i = 0; i < n; i++) {
-        cin >> balls[i];
-    }
-
-    cout << maxBalls(balls) << endl;
-
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    solve();
     return 0;
 }
